@@ -6,3 +6,9 @@ Se crea ejercicio1.sh, recibe como parametro un ID de proceso (PID)  develve: no
 
 
 Se crea ejercicio2.sh el cual recibe como parametros un nombre de proceso y el comando para ejecutarlo, en este se debe revisar periodicamente el estado de dicho proceso, si se cierra se debe de volver a levantar.
+
+
+Se crea ejercicio3.sh
+
+
+Se crea ejercicio4.sh este se basa en crear un servicio que ejecute el srcitp de ejercicio 4 para que este guarde dentro de otro archivo de logs los cambios que se presenten, en este caso se analiza el directorio home. 
