@@ -14,7 +14,7 @@ proceso_corriendo() {
     pgrep -x "$nombre_proceso" > /dev/null
 }
 
-# Función para iniciar el proceso
+# Función para iniciar el proceso si no está corriendo
 iniciar_proceso() {
     echo "Iniciando el proceso $nombre_proceso..."
     $comando &
@@ -23,10 +23,12 @@ iniciar_proceso() {
 # Bucle principal
 while true; do
     # Verificar si el proceso está corriendo
-    if ! proceso_corriendo; then
+    if proceso_corriendo; then
+        echo "El proceso $nombre_proceso ya está corriendo."
+    else
         echo "El proceso $nombre_proceso no está corriendo. Iniciándolo..."
         iniciar_proceso
     fi
-    # Dormir durante 1 minuto antes de verificar nuevamente para hacerlo de manera periodica
-    sleep 60
+    # Dormir durante 15 segundos antes de verificar nuevamente
+    sleep 15
 done
