@@ -27,6 +27,6 @@ while true; do
         echo "El proceso $nombre_proceso no está corriendo. Iniciándolo..."
         iniciar_proceso
     fi
-    # Dormir durante 1 minuto antes de verificar nuevamente
+    # Dormir durante 1 minuto antes de verificar nuevamente para hacerlo de manera periodica
     sleep 60
 done
