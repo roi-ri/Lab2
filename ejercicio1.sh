@@ -22,7 +22,9 @@ usuario=$(ps -p $pid -o user=)
 uso_cpu=$(ps -p $pid -o %cpu=)
 memoria=$(ps -p $pid -o %mem=)
 estado=$(ps -p $pid -o state=)
-path=$(readlink -f  /proc/$pid/exe)
+
+# Obtiene el path del ejecutable
+path=$(readlink  /proc/$pid/exe )
 
 # Muestra la información obtenida
 echo "Nombre del proceso: $nombre"
@@ -34,4 +36,3 @@ echo "Consumo de memoria: $memoria"
 echo "Estado: $estado"
 echo "Path del ejecutable: $path"
 
- 
