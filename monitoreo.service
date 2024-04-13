@@ -1,0 +1,11 @@
+[Unit]
+Description=Servicio de Monitoreo de Cambios en Directorios
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/roiri/Lab2/ejercicio4.sh
+WorkingDirectory=/home/roiri/Lab2
+
+[Install]
+WantedBy=multi-user.target
