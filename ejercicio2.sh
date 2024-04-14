@@ -1,15 +1,13 @@
 #!/bin/bash
 
 # Verifica que se hayan proporcionado los argumentos necesarios
-if [ $# -ne 1 ]; then
-    echo "Uso: $0 <comando_con_duración>"
+if [ $# -ne 2 ]; then
+    echo "Uso: $0 <nombre_del_proceso> <comando_para_ejecutar>"
     exit 1
 fi
 
-comando_con_duración=$1
-
-# Obtener el nombre del proceso del comando
-nombre_proceso=$(echo "$comando_con_duración" | awk '{print $1}')
+nombre_proceso=$1
+comando=$2
 
 # Función para verificar si el proceso está corriendo
 proceso_corriendo() {
@@ -19,7 +17,7 @@ proceso_corriendo() {
 # Función para iniciar el proceso si no está corriendo
 iniciar_proceso() {
     echo "Iniciando el proceso $nombre_proceso..."
-    $comando_con_duración &
+    $comando &
 }
 
 # Bucle principal
